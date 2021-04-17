@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --headerHeight: 55px;
+  --borderColor: #dbdbdb;
+  --lightGrey: #fafafa;
+  --grey: #8e8e8e;
+  --white: #ffffff;
+}
+.container {
+  display: flex;
+  width: 60%;
+  height: 100%;
+  margin: auto;
+}
+.container.debug {
+  background-color: red;
+}

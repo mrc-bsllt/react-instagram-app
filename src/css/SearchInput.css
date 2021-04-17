@@ -1,0 +1,15 @@
+::placeholder {
+    color: var(--grey);
+}
+:focus {
+    outline: none;
+    text-align: left;
+}
+input {
+    width: 250px;
+    height: 30px;
+    background-color: var(--lightGrey);
+    border: 1px solid var(--borderColor);
+    border-radius: 3px;
+    text-align: center;
+}

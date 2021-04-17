@@ -1,0 +1,13 @@
+.bottom_post {
+    height: 300px;
+}
+.bottom_post > .icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    padding: 0 10px;
+}
+.bottom_post > .icons > img {
+    margin: 0 5px;
+}
