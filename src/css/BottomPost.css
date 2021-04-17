@@ -1,13 +1,22 @@
 .bottom_post {
     height: 300px;
+    padding: 0 10px;
 }
-.bottom_post > .icons {
+.bottom_post > .icons,
+.bottom_post > .feeds,
+.bottom_post > .post_description {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 50px;
-    padding: 0 10px;
+    height: 40px;
 }
-.bottom_post > .icons > img {
+.bottom_post img {
     margin: 0 5px;
+}
+.bottom_post > .feeds > img {
+    width: 30px;
+    border-radius: 50%;
+}
+.post_description > h4 {
+    margin-right: 5px;
 }

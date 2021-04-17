@@ -1,0 +1,5 @@
+.comments > p {
+    width: max-content;
+    color: var(--grey);
+    cursor: pointer;
+}
