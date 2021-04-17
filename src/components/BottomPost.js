@@ -1,5 +1,6 @@
 import "../css/BottomPost.css";
 import Comments from "./Comments";
+
 const BottomPost = () => {
     return (
         <div className="bottom_post">
@@ -19,6 +20,8 @@ const BottomPost = () => {
             </div>
 
             <Comments />
+
+            <p className="date_post">3 ORE FA</p>
         </div>
     )
 }
