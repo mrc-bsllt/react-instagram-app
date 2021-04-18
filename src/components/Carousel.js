@@ -6,17 +6,23 @@ const Carousel = ({ stories, iteration, increaseIndex, decreaseIndex, remainingS
 
     return (
         <div className="carousel">
-            <div className="prev" onClick={ () => increaseIndex(iteration, remainingStories) } >
-                <i className="fas fa-angle-left"></i>
-            </div>
+            { iteration > 0 && (
+                <div className="prev" onClick={ () => increaseIndex(iteration, remainingStories) } >
+                    <i className="fas fa-angle-left"></i>
+                </div>
+            )}
 
             <div className="slider" style={{ left: leftPosition }}>
                { stories.map((story, index) => <Story key={ index } story={ story } index={ index } /> ) } 
             </div>
-
-            <div className="next" onClick={ () => decreaseIndex(iteration, remainingStories) } >
-                <i className="fas fa-angle-right"></i>
-            </div>
+            
+            { iteration !== stories.length - 7 && (
+                <div className="next" onClick={ () => decreaseIndex(iteration, remainingStories) } >
+                    <i className="fas fa-angle-right"></i>
+                </div>
+            )}
+        
+            
         </div>
     )
 }

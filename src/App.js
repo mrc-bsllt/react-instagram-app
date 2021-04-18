@@ -56,22 +56,22 @@ const App = () => {
 
   //incremento della index per spostare il carosello verso sinistra
   const increaseIndex = (value, storiesValue) => {
-    if(storiesValue >= 7) {
-      setRemainingStories(storiesValue - 7);
-      setIiteration(value + 7);
+    if(value >= 7) {
+      setRemainingStories(storiesValue + 7);
+      setIiteration(value - 7);
     } else {
-      setIiteration(value + storiesValue);
+      setIiteration(0);
     }
     
   }
 
   //decremento della index per spostare il carosello verso destra
   const decreaseIndex = (value, storiesValue) => {
-    if(value >= 7) {
-      setRemainingStories(storiesValue + 7);
-      setIiteration(value - 7);
+    if(storiesValue >= 7) {
+      setRemainingStories(storiesValue - 7);
+      setIiteration(value + 7);
     } else {
-      setIiteration(0);
+      setIiteration(value + storiesValue);
     }
 
   }
@@ -79,7 +79,7 @@ const App = () => {
   useEffect(() => {
     getStories();
     }, [])
-
+      
   return (
     <div className="App">
       <NavCustom />
