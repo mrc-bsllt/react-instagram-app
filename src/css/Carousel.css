@@ -1,6 +1,16 @@
 .carousel {
+    position: relative;
     height: 100px;
     background-color: var(--white);
     border: 1px solid var(--borderColor);
     border-radius: 3px;
+    
+}
+.carousel > .slider {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: max-content;
+    height: 100%;
 }
