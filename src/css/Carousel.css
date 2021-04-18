@@ -3,14 +3,37 @@
     height: 100px;
     background-color: var(--white);
     border: 1px solid var(--borderColor);
-    border-radius: 3px;
-    
+    border-radius: 3px;    
 }
 .carousel > .slider {
     display: flex;
     position: absolute;
     top: 0;
-    left: 0;
     width: max-content;
     height: 100%;
+    translate: all 1s linear;
+}
+.prev,
+.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--white);
+    -webkit-box-shadow: 7px 7px 30px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 7px 7px 30px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 7px 7px 30px 0px rgba(50, 50, 50, 0.75);
+    z-index: 1;
+    cursor: pointer;
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
 }

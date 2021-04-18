@@ -1,10 +1,13 @@
 import "../css/Story.css";
 
-const Story = ( index, story ) => {
+const Story = ({ index, story }) => {
+
     return (
         <div className="story">
-            <img src={ story.profile_picture } alt={ story.profile_name } />
-            <h5>{ story.profile_name }</h5>
+            <div className="story_image">
+                <img src={ story.profile_picture } alt={ story.profile_name } />
+            </div>
+            <h5>{ `${story.profile_name.substr(0, 8)}...` }</h5>
         </div>
     )
 }

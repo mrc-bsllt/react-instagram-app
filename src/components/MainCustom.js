@@ -2,12 +2,12 @@ import "../css/MainCustom.css";
 import Carousel from "./Carousel";
 import Posts from "./Posts";
 
-const MainCustom = ({ stories }) => {
+const MainCustom = ({ stories, indexFirstStory, increaseIndex, decreaseIndex }) => {
     return (
         <main>
             <div className="container">
                 <div className="left">
-                    <Carousel stories={ stories } />
+                    <Carousel stories={ stories } indexFirstStory={ indexFirstStory } increaseIndex={ increaseIndex } decreaseIndex={ decreaseIndex } />
                     <Posts />
                 </div>
                 <div className="right"></div>

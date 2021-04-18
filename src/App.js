@@ -6,12 +6,14 @@ import MainCustom from "./components/MainCustom";
 
 const App = () => {
   const [stories, setStories] = useState([]);
+  const [indexFirstStory, setIndexFirstStory] = useState(0)
 
   //prendo le storie dall'API
   const getStories = () => {
     axios.get("https://flynn.boolean.careers/exercises/api/boolgram/profiles")
       .then((response) => {
         const resultStories = response.data;
+
         setStories([ ...resultStories,
           {
             profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
@@ -28,6 +30,18 @@ const App = () => {
         ]);
       });
   }
+
+  //incremento della index per spostare il carosello verso sinistra
+  const increaseIndex = (value) => {
+    setIndexFirstStory(value + 1)
+    
+  }
+
+  //decremento della index per spostare il carosello verso destra
+  const decreaseIndex = (value) => {
+    setIndexFirstStory(value - 1)
+  }
+  
   useEffect(() => {
     getStories();
     }, [])
@@ -35,7 +49,7 @@ const App = () => {
   return (
     <div className="App">
       <NavCustom />
-      <MainCustom stories={ stories }/>
+      <MainCustom stories={ stories } indexFirstStory={ indexFirstStory } increaseIndex={ increaseIndex } decreaseIndex={ decreaseIndex } />
     </div>
   );
 }
