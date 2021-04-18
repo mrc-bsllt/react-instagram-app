@@ -6,40 +6,74 @@ import MainCustom from "./components/MainCustom";
 
 const App = () => {
   const [stories, setStories] = useState([]);
-  const [indexFirstStory, setIndexFirstStory] = useState(0)
+  const [iteration, setIiteration] = useState(0);
+  const [remainingStories, setRemainingStories] = useState(0);
 
   //prendo le storie dall'API
   const getStories = () => {
     axios.get("https://flynn.boolean.careers/exercises/api/boolgram/profiles")
       .then((response) => {
-        const resultStories = response.data;
+        const resultStories = [...response.data, 
+          {
+            profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
+            profile_name: "dna_lor"
+          },
+          {
+            profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
+            profile_name: "dna_lor"
+          },
+          {
+            profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
+            profile_name: "dna_lor"
+          },
+          {
+            profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
+            profile_name: "dna_lor"
+          },
+          {
+            profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
+            profile_name: "dna_lor"
+          },
+          {
+            profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
+            profile_name: "dna_lor"
+          },
+          {
+            profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
+            profile_name: "dna_lor"
+          },
+          {
+            profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
+            profile_name: "dna_lor"
+          },
+        ];
 
-        setStories([ ...resultStories,
-          {
-            profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
-            profile_name: "dna_lor"
-          },
-          {
-            profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
-            profile_name: "dna_lor"
-          },
-          {
-            profile_picture: "https://thypix.com/wp-content/uploads/beautiful-profile-picture-hidden-face-girl-63.jpg",
-            profile_name: "dna_lor"
-          },
-        ]);
+        setStories(resultStories);
+        setRemainingStories(resultStories.length - 7);
+        
       });
   }
 
   //incremento della index per spostare il carosello verso sinistra
-  const increaseIndex = (value) => {
-    setIndexFirstStory(value + 1)
+  const increaseIndex = (value, storiesValue) => {
+    if(storiesValue >= 7) {
+      setRemainingStories(storiesValue - 7);
+      setIiteration(value + 7);
+    } else {
+      setIiteration(value + storiesValue);
+    }
     
   }
 
   //decremento della index per spostare il carosello verso destra
-  const decreaseIndex = (value) => {
-    setIndexFirstStory(value - 1)
+  const decreaseIndex = (value, storiesValue) => {
+    if(value >= 7) {
+      setRemainingStories(storiesValue + 7);
+      setIiteration(value - 7);
+    } else {
+      setIiteration(0);
+    }
+
   }
   
   useEffect(() => {
@@ -49,7 +83,7 @@ const App = () => {
   return (
     <div className="App">
       <NavCustom />
-      <MainCustom stories={ stories } indexFirstStory={ indexFirstStory } increaseIndex={ increaseIndex } decreaseIndex={ decreaseIndex } />
+      <MainCustom stories={ stories } iteration={ iteration } increaseIndex={ increaseIndex } decreaseIndex={ decreaseIndex } remainingStories={ remainingStories }/>
     </div>
   );
 }
