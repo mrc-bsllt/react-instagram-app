@@ -2,16 +2,19 @@ import "../css/Comments.css";
 import Comment from "./Comment";
 
 const Comments = ({ commentsArray }) => {
+    const filterComments = commentsArray.filter(
+        (comment, index) => {
+            return index < 3;
+        }
+    );
+
     return(
         <div className="comments">
-            {/* <p>Mostra tutti e 5 commenti</p>
-            <Comment />
-            <Comment />
-            <Comment /> */}
             { commentsArray.length > 3 && (
                 <p>{`Mostra tutti e ${commentsArray.length} commenti`}</p>
             )}
-            { commentsArray.map((comment, index) => <Comment key={ index } />) } 
+
+            { filterComments.map((comment, index) => <Comment key={ index } comment={ comment } />) } 
         </div>
     )
 }
