@@ -5,6 +5,7 @@ import NavCustom from "./components/NavCustom";
 import MainCustom from "./components/MainCustom";
 
 const App = () => {
+
   const [stories, setStories] = useState([]);
   const [iteration, setIiteration] = useState(0);
   const [remainingStories, setRemainingStories] = useState(0);
