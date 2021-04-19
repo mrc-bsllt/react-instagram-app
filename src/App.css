@@ -9,6 +9,7 @@
   --lightGrey: #fafafa;
   --grey: #8e8e8e;
   --white: #ffffff;
+  --blue: #0095f6;
 }
 .container {
   display: flex;
@@ -21,4 +22,9 @@
 }
 h4 {
   font-size: 13px;
+}
+::placeholder {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }

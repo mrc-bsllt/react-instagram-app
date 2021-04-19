@@ -1,5 +1,6 @@
 import "../css/BottomPost.css";
 import Comments from "./Comments";
+import FormCustom from "./FormCustom";
 
 const BottomPost = () => {
     return (
@@ -22,6 +23,8 @@ const BottomPost = () => {
             <Comments />
 
             <p className="date_post">3 ORE FA</p>
+
+            <FormCustom />
         </div>
     )
 }

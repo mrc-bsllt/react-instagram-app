@@ -1,0 +1,60 @@
+.add_comment {
+    display: flex;
+    height: var(--headerHeight);
+    background-color: var(--white);
+    border-top: 1px solid var(--borderColor);
+}
+.add_comment > .emoji_container,
+.add_comment > .form_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.add_comment > .emoji_container {
+    width: 10%;
+}
+.emoji_container > button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.add_comment > .form_container {
+    width: 90%;
+}
+.form_container > form {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.form_container > form > .text_comment {
+    width: 80%;
+    height: 100%;
+}
+.text_comment > textarea {
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+    border: none;
+    resize: none;
+    overflow-y: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;  
+}
+.form_container > form > .send_comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+.send_comment > input[type=submit] {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--blue);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
