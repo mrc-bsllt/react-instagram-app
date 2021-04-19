@@ -86,6 +86,25 @@ const App = () => {
     }
 
   }
+
+  //funzione per aggiungere un commento
+  const addComment = (text, indexPost) => {
+    const postComments = posts[indexPost].comments;
+    postComments.unshift({ username: "mrc_bsllt", text: text });
+    
+    const newPosts = posts.map(
+      (element, index) => {
+        if(index === indexPost) {
+          return { ...element, comments: postComments }
+        }
+
+        return element;
+      }
+
+    );
+
+    setPosts(newPosts);
+  }
   
   useEffect(() => {
     getStories();
@@ -102,6 +121,7 @@ const App = () => {
         decreaseIndex={ decreaseIndex } 
         remainingStories={ remainingStories }
         posts={ posts }
+        addComment={ addComment }
       />
     </div>
   );

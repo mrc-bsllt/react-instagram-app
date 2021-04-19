@@ -1,6 +1,15 @@
+import { useState } from "react";
 import "../css/FormCustom.css";
 
-const FormCustom = () => {
+const FormCustom = ({ addComment, index }) => {
+    const [textComment, setTextComment] = useState("")
+
+    const preventDefault = (e) => {
+        e.preventDefault();
+        addComment(textComment, index);
+        setTextComment("");
+    }
+
     return (
         <div className="add_comment">
             <div className="emoji_container">
@@ -10,9 +19,9 @@ const FormCustom = () => {
             </div>
 
             <div className="form_container">
-                <form>
+                <form onSubmit={ preventDefault }>
                     <div className="text_comment">
-                        <textarea placeholder="Aggiungi un commento..."></textarea>
+                        <textarea value={ textComment } onChange={ (e) => setTextComment( e.target.value ) } placeholder="Aggiungi un commento..."></textarea>
                     </div>
 
                     <div className="send_comment">

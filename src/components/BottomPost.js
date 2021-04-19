@@ -2,12 +2,13 @@ import "../css/BottomPost.css";
 import Comments from "./Comments";
 import FormCustom from "./FormCustom";
 
-const BottomPost = ({ post }) => {
+const BottomPost = ({ post, index, addComment }) => {
     var moment = require('moment');
-
+    
     const likesArray = post.likes;
     const commentsArray = post.comments;
-    const datePost = (post.date.date.split(" ")[0].split("-") + post.date.date.split(" ")[1].split(":")[0]).split(",");
+    let datePost = (post.date.date.split(" ")[0].split("-") + post.date.date.split(" ")[1].split(":")[0]).split(",");
+    datePost = moment(datePost, "YYYYMMDDh").fromNow().toUpperCase();
 
     return (
         <div className="bottom_post">
@@ -37,9 +38,9 @@ const BottomPost = ({ post }) => {
                 <Comments commentsArray={ commentsArray } />
             )}
 
-            <p className="date_post">{ moment(datePost, "YYYYMMDDh").fromNow().toUpperCase() }</p>
+            <p className="date_post">{ datePost }</p>
 
-            <FormCustom />
+            <FormCustom index={ index } addComment={ addComment } />
         </div>
     )
 }
