@@ -12,6 +12,9 @@
 }
 .bottom_post > .feeds > img {
     width: 30px;
+    height: 30px;
+    object-fit: cover;
+    object-position: center;
     border-radius: 50%;
 }
 .post_description > h4 {

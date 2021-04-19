@@ -8,6 +8,7 @@ const App = () => {
   const [stories, setStories] = useState([]);
   const [iteration, setIiteration] = useState(0);
   const [remainingStories, setRemainingStories] = useState(0);
+  const [posts, setPosts] = useState([]);
 
   //prendo le storie dall'API
   const getStories = () => {
@@ -54,6 +55,15 @@ const App = () => {
       });
   }
 
+  //prendo i posts dall'API
+  const getPosts = () => {
+    axios.get("https://flynn.boolean.careers/exercises/api/boolgram/posts")
+      .then((response) => {
+        const resultPosts = response.data;
+        setPosts(resultPosts);
+      });
+  }
+
   //incremento della index per spostare il carosello verso sinistra
   const increaseIndex = (value, storiesValue) => {
     if(value >= 7) {
@@ -78,12 +88,20 @@ const App = () => {
   
   useEffect(() => {
     getStories();
+    getPosts();
     }, [])
       
   return (
     <div className="App">
       <NavCustom />
-      <MainCustom stories={ stories } iteration={ iteration } increaseIndex={ increaseIndex } decreaseIndex={ decreaseIndex } remainingStories={ remainingStories }/>
+      <MainCustom 
+        stories={ stories } 
+        iteration={ iteration } 
+        increaseIndex={ increaseIndex } 
+        decreaseIndex={ decreaseIndex } 
+        remainingStories={ remainingStories }
+        posts={ posts }
+      />
     </div>
   );
 }

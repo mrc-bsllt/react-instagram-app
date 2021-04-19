@@ -2,7 +2,9 @@ import "../css/BottomPost.css";
 import Comments from "./Comments";
 import FormCustom from "./FormCustom";
 
-const BottomPost = () => {
+const BottomPost = ({ post }) => {
+    const likesArray = post.likes;
+
     return (
         <div className="bottom_post">
             <div className="icons">
@@ -10,14 +12,21 @@ const BottomPost = () => {
                 <img src="img/icons/chat.svg" alt="chat_icon"/>
             </div>
 
-            <div className="feeds">
-                <img src="img/profilo.jpg" alt="first comment avatar"/>
-                <p>Piace a <strong>Username-primo-commento</strong> e <strong>altri 4</strong></p>
-            </div>
+            { likesArray.length > 0 && (
+                <div className="feeds">
+                    <img src={ likesArray[0].profile_picture } alt="first comment avatar"/>
+
+                    { likesArray.length > 1 ? (
+                        <p>Piace a <strong>{ likesArray[0].username }</strong> e <strong>altri { likesArray.length - 1 }</strong></p>
+                    ) : (
+                        <p>Piace a <strong>{ likesArray[0].username }</strong></p>
+                    )}
+                </div>
+            )}
 
             <div className="post_description">
-                <h4>Username-creator-post</h4>
-                <p>Descrizione del post...</p>
+                <h4>{ post.profile_name }</h4>
+                <p>{ post.post_text }</p>
             </div>
 
             <Comments />

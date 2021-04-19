@@ -6,6 +6,7 @@ header.top_header {
     height: var(--headerHeight);
     background-color: var(--white);
     border-bottom: 1px solid var(--borderColor);
+    z-index: 2;
 }
 header .left,
 header .center,

@@ -1,10 +1,10 @@
 import "../css/Posts.css";
 import Post from "./Post";
 
-const Posts = () => {
+const Posts = ({ posts }) => {
     return (
         <section className="posts">
-            <Post />
+            { posts.map((post, index) => <Post key={ index } post={ post } />) }
         </section>
     )
 }
