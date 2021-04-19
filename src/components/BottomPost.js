@@ -4,6 +4,7 @@ import FormCustom from "./FormCustom";
 
 const BottomPost = ({ post }) => {
     const likesArray = post.likes;
+    const commentsArray = post.comments;
 
     return (
         <div className="bottom_post">
@@ -28,8 +29,10 @@ const BottomPost = ({ post }) => {
                 <h4>{ post.profile_name }</h4>
                 <p>{ post.post_text }</p>
             </div>
-
-            <Comments />
+            
+            { commentsArray.length > 0 && (
+                <Comments commentsArray={ commentsArray } />
+            )}
 
             <p className="date_post">3 ORE FA</p>
 
