@@ -54,7 +54,30 @@ main > .container > .right > .switch_profile {
     align-items: center;
     width: 20%;
 }
-.switch_profile > .right > a {
-    color: var(--blue);
-    font-weight: 600;
+
+.users_tips {
+    height: 800px;
+    padding: 50px 0;
+}
+.users_tips > .titles  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.users_tips > .titles > h3 {
+    color: var(--grey);
+}
+ul.tips_list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+ul.tips_list li > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+ul.tips_list li > div > img {
+    margin-right: 10px;
 }

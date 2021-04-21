@@ -26,8 +26,29 @@ const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainin
                             <p>Marco Busellato</p>
                         </div>
                         <div className="right">
-                            <a href="#">Passa a</a>
+                            <a className="link" href="#">Passa a</a>
                         </div>
+                    </section>
+
+                    <section className="users_tips">
+                        <div className="titles">
+                            <h3>Suggerimenti per te</h3>
+                            <h4>Mostra tutti</h4>
+                        </div>
+
+                        <ul className="tips_list">
+                            { stories.map((story, index) => {
+                                return(
+                                    <li>
+                                        <div>
+                                            <img src={ story.profile_picture } alt="tip_image" className="img_circle img_stndrd" />
+                                            <h4>{ story.profile_name }</h4>
+                                        </div>
+                                        <a className="link" href="#">Segui</a>
+                                    </li>
+                                )
+                            }) }
+                        </ul>
                     </section>
                 </div>
             </div>

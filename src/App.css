@@ -39,3 +39,19 @@ a {
 a:hover {
   text-decoration: none;
 }
+ul {
+  list-style: none;
+}
+a.link {
+  color: var(--blue);
+  font-weight: 600;
+}
+.img_circle {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+.img_stndrd {
+  width: 60px;
+  height: 60px;
+}
