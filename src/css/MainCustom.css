@@ -56,7 +56,8 @@ main > .container > .right > .switch_profile {
 }
 
 .users_tips {
-    height: 800px;
+    position: sticky;
+    top: var(--headerHeight);
     padding: 50px 0;
 }
 .users_tips > .titles  {
@@ -67,11 +68,16 @@ main > .container > .right > .switch_profile {
 .users_tips > .titles > h3 {
     color: var(--grey);
 }
+ul.tips_list {
+    height: 500px;
+    overflow: auto;
+}
 ul.tips_list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    padding-right: 10px;
 }
 ul.tips_list li > div {
     display: flex;
