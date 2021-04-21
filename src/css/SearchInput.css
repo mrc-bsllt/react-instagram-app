@@ -1,8 +1,7 @@
 ::placeholder {
     color: var(--grey);
 }
-:focus {
-    outline: none;
+.search_bar:focus {
     text-align: left;
 }
 input {

@@ -16,7 +16,20 @@ const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainin
                     />
                     <Posts posts={ posts } addComment={ addComment } />
                 </div>
-                <div className="right"></div>
+                <div className="right">
+                    <section className="switch_profile">
+                        <div className="left">
+                            <img src="img/profilo.jpg" alt="foto_profilo"/>
+                        </div>
+                        <div className="center">
+                            <p>mrc_bsllt</p>
+                            <p>Marco Busellato</p>
+                        </div>
+                        <div className="right">
+                            <a href="#">Passa a</a>
+                        </div>
+                    </section>
+                </div>
             </div>
         </main>
     )

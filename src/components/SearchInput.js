@@ -3,7 +3,7 @@ import "../css/SearchInput.css";
 const SearchInput = () => {
     return (
         <div>
-            <input type="text" placeholder="Cerca"/>
+            <input type="text" placeholder="Cerca" className="search_bar" />
         </div>
     )
 }

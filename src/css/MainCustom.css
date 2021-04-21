@@ -4,9 +4,57 @@ main {
     padding: 50px 0;
     background-color: var(--lightGrey);
 }
-main .left {
+main > .container > .left {
     width: 60%;
 }
-main .right {
+main > .container > .right {
     width: 40%;
+    padding: 0 0 0 40px;
+}
+main > .container > .right > .switch_profile {
+    display: flex;
+    height: var(--carouselHeight);
+}
+
+.switch_profile > .left,
+.switch_profile > .center,
+.switch_profile > .right {
+    height: 100%;
+}
+.switch_profile > .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+.switch_profile > .left > img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.switch_profile > .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 55%;
+}
+.switch_profile > .center p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+
+}
+.switch_profile > .center p:last-child {
+    font-size: 18px;
+    color: var(--grey);
+}
+.switch_profile > .right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20%;
+}
+.switch_profile > .right > a {
+    color: var(--blue);
+    font-weight: 600;
 }
