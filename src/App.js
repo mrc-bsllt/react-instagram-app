@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Skeleton from 'react-loading-skeleton';
 import axios from "axios";
 import './App.css';
 import NavCustom from "./components/NavCustom";

@@ -16,44 +16,52 @@ const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainin
                         decreaseIndex={ decreaseIndex } 
                         remainingStories={ remainingStories }
                     />
-                    <Posts posts={ posts } addComment={ addComment } />
+
+                    { !isUploading && (
+                        <Posts posts={ posts } addComment={ addComment } />
+                    )}
                 </div>
-                <div className="right">
-                    <section className="switch_profile">
-                        <div className="left">
-                            <img src="img/profilo.jpg" alt="foto_profilo"/>
-                        </div>
-                        <div className="center">
-                            <p>mrc_bsllt</p>
-                            <p>Marco Busellato</p>
-                        </div>
-                        <div className="right">
-                            <a className="link" href="#">Passa a</a>
-                        </div>
-                    </section>
 
-                    <section className="users_tips">
-                        <div className="titles">
-                            <h3>Suggerimenti per te</h3>
-                            <h4>Mostra tutti</h4>
-                        </div>
+                { !isUploading && (
+                    <div className="right">
 
-                        <ul className="tips_list">
-                            { stories.map((story, index) => {
-                                return(
-                                    <li>
-                                        <div>
-                                            <img src={ story.profile_picture } alt="tip_image" className="img_circle img_stndrd" />
-                                            <h4>{ story.profile_name }</h4>
-                                        </div>
-                                        <a className="link" href="#">Segui</a>
-                                    </li>
-                                )
-                            }) }
-                        </ul>
-                    </section>
+                        <section className="switch_profile">
+                            <div className="left">
+                                <img src="img/profilo.jpg" alt="foto_profilo"/>
+                            </div>
+                            <div className="center">
+                                <p>mrc_bsllt</p>
+                                <p>Marco Busellato</p>
+                            </div>
+                            <div className="right">
+                                <a className="link" href="#">Passa a</a>
+                            </div>
+                        </section>
 
-                </div>
+                        <section className="users_tips">
+                            <div className="titles">
+                                <h3>Suggerimenti per te</h3>
+                                <h4>Mostra tutti</h4>
+                            </div>
+
+                            <ul className="tips_list">
+                                { stories.map((story, index) => {
+                                    return(
+                                        <li>
+                                            <div>
+                                                <img src={ story.profile_picture } alt="tip_image" className="img_circle img_stndrd" />
+                                                <h4>{ story.profile_name }</h4>
+                                            </div>
+                                            <a className="link" href="#">Segui</a>
+                                        </li>
+                                    )
+                                }) }
+                            </ul>
+                        </section>
+
+                    </div>
+                )}
+
             </div>
         </main>
     )
