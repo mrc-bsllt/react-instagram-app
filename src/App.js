@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Skeleton from 'react-loading-skeleton';
 import axios from "axios";
 import './App.css';
 import NavCustom from "./components/NavCustom";
@@ -10,6 +11,7 @@ const App = () => {
   const [iteration, setIiteration] = useState(0);
   const [remainingStories, setRemainingStories] = useState(0);
   const [posts, setPosts] = useState([]);
+  const [isUploading, setIsUploanding] = useState(true);
 
   //prendo le storie dall'API
   const getStories = () => {
@@ -49,7 +51,9 @@ const App = () => {
             profile_name: "dna_lor"
           },
         ];
-
+        setTimeout(function() {
+          setIsUploanding(false);
+        }, 1000)
         setStories(resultStories);
         setRemainingStories(resultStories.length - 7);
         
@@ -115,6 +119,7 @@ const App = () => {
     <div className="App">
       <NavCustom />
       <MainCustom 
+        isUploading={ isUploading }
         stories={ stories } 
         iteration={ iteration } 
         increaseIndex={ increaseIndex } 

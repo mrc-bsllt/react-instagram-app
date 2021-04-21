@@ -4,7 +4,7 @@
     background-color: var(--white);
     border: 1px solid var(--borderColor);
     border-radius: 3px;
-    overflow-x: hidden;    
+    overflow: hidden;    
 }
 .carousel > .slider {
     display: flex;

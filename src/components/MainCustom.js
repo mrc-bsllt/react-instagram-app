@@ -2,12 +2,14 @@ import "../css/MainCustom.css";
 import Carousel from "./Carousel";
 import Posts from "./Posts";
 
-const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainingStories, posts, addComment }) => {
+
+const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainingStories, posts, addComment, isUploading }) => {
     return (
         <main>
             <div className="container">
                 <div className="left">
                     <Carousel 
+                        isUploading={ isUploading }
                         stories={ stories } 
                         iteration={ iteration } 
                         increaseIndex={ increaseIndex } 
@@ -50,6 +52,7 @@ const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainin
                             }) }
                         </ul>
                     </section>
+
                 </div>
             </div>
         </main>
