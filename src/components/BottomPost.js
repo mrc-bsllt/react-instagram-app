@@ -2,7 +2,7 @@ import "../css/BottomPost.css";
 import Comments from "./Comments";
 import FormCustom from "./FormCustom";
 
-const BottomPost = ({ post, index, addComment }) => {
+const BottomPost = ({ post, index, addComment, uploadComment }) => {
     var moment = require('moment');
     
     const likesArray = post.likes;
@@ -35,7 +35,7 @@ const BottomPost = ({ post, index, addComment }) => {
             </div>
             
             { commentsArray.length > 0 && (
-                <Comments commentsArray={ commentsArray } />
+                <Comments commentsArray={ commentsArray }  uploadComment={ uploadComment } />
             )}
 
             <p className="date_post">{ datePost }</p>

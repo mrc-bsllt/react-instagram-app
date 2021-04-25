@@ -1,7 +1,7 @@
 import "../css/Post.css";
 import BottomPost from "./BottomPost";
 
-const Post = ({ post, index, addComment }) => {
+const Post = ({ post, index, addComment, uploadComment }) => {
     return (
         <div className="post">
             <header className="post_header">
@@ -19,7 +19,7 @@ const Post = ({ post, index, addComment }) => {
             </section>
 
             <section className="bottom_post_section">
-                <BottomPost  post={post} index={ index } addComment={ addComment } />
+                <BottomPost  post={post} index={ index } addComment={ addComment }  uploadComment={ uploadComment } />
             </section>
         </div>
     )

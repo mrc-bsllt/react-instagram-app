@@ -3,7 +3,7 @@ import Carousel from "./Carousel";
 import Posts from "./Posts";
 
 
-const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainingStories, posts, addComment, isUploading }) => {
+const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainingStories, posts, addComment, isUploading, uploadComment }) => {
     return (
         <main>
             <div className="container">
@@ -18,7 +18,7 @@ const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainin
                     />
 
                     { !isUploading && (
-                        <Posts posts={ posts } addComment={ addComment } />
+                        <Posts posts={ posts } addComment={ addComment }  uploadComment={ uploadComment } />
                     )}
                 </div>
 
@@ -47,7 +47,7 @@ const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainin
                             <ul className="tips_list">
                                 { stories.map((story, index) => {
                                     return(
-                                        <li>
+                                        <li key={ index }>
                                             <div>
                                                 <img src={ story.profile_picture } alt="tip_image" className="img_circle img_stndrd" />
                                                 <h4>{ story.profile_name }</h4>

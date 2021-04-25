@@ -11,6 +11,7 @@ const App = () => {
   const [remainingStories, setRemainingStories] = useState(0);
   const [posts, setPosts] = useState([]);
   const [isUploading, setIsUploanding] = useState(true);
+  const [uploadComment, setUploadComment] = useState(false);
 
   //prendo le storie dall'API
   const getStories = () => {
@@ -92,6 +93,9 @@ const App = () => {
 
   //funzione per aggiungere un commento
   const addComment = (text, indexPost) => {
+
+    setUploadComment(true);    
+
     const postComments = posts[indexPost].comments;
     postComments.unshift({ username: "mrc_bsllt", text: text });
     
@@ -107,6 +111,10 @@ const App = () => {
     );
 
     setPosts(newPosts);
+
+    setTimeout(function() {
+      setUploadComment(false);
+    }, 500);
   }
   
   useEffect(() => {
@@ -126,6 +134,7 @@ const App = () => {
         remainingStories={ remainingStories }
         posts={ posts }
         addComment={ addComment }
+        uploadComment= { uploadComment }
       />
     </div>
   );
