@@ -1,0 +1,27 @@
+.under_timebar {
+    position: relative;
+    width: 90%;
+    height: 3px;
+    border-radius: 1.5px;
+    overflow: hidden;
+    background-color: var(--grey);
+}
+.under_timebar > .over_timebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--white);
+    animation-name: loaderBar;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+}
+
+@keyframes loaderBar {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
