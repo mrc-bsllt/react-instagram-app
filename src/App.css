@@ -21,12 +21,6 @@
 .container.debug {
   background-color: red;
 }
-.display_block {
-  display: block;
-}
-.display_none {
-  display: none;
-}
 h4 {
   font-size: 13px;
 }
