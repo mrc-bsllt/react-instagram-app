@@ -2,7 +2,7 @@ import "../css/Carousel.css"
 import Story from "./Story";
 import Loader from "./Loader";
 
-const Carousel = ({ stories, iteration, increaseIndex, decreaseIndex, remainingStories, isUploading }) => {
+const Carousel = ({ stories, iteration, increaseIndex, decreaseIndex, remainingStories, isUploading, activeIndexStory, activeStory, stopIntervalStories }) => {
     const leftPosition = -(iteration * 98);
 
     if(!isUploading) {
@@ -16,7 +16,7 @@ const Carousel = ({ stories, iteration, increaseIndex, decreaseIndex, remainingS
                 )}
     
                 <div className="slider" style={{ left: leftPosition }}>
-                   { stories.map((story, index) => <Story key={ index } story={ story } index={ index } /> ) } 
+                   { stories.map((story, index) => <Story key={ index } story={ story } index={ index } activeIndexStory={ activeIndexStory } activeStory={ activeStory }  stopIntervalStories={ stopIntervalStories } /> ) } 
                 </div>
                 
                 { iteration !== stories.length - 7 && (

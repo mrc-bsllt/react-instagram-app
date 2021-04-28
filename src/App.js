@@ -12,6 +12,8 @@ const App = () => {
   const [posts, setPosts] = useState([]);
   const [isUploading, setIsUploanding] = useState(true);
   const [uploadComment, setUploadComment] = useState(false);
+  const [activeIndexStory, setActiveIndexStory] = useState(-1);
+  const [intervalStories, setIntervalStories] = useState();
 
   //prendo le storie dall'API
   const getStories = () => {
@@ -155,6 +157,27 @@ const App = () => {
       setUploadComment(false);
     }, 500);
   }
+
+  //attivo la visibilità della storia
+  const activeStory = (storyIndex) => {
+    setActiveIndexStory(storyIndex);
+    let index = storyIndex;
+
+    setIntervalStories(
+
+      setInterval(function() {
+        index++;
+        setActiveIndexStory(index);
+      }, 5000)  
+
+    );
+  }
+
+  //esco dalla visualizzazione della storia
+  const stopIntervalStories = () => {
+    setActiveIndexStory(-1);
+    clearInterval(intervalStories);
+  }
   
   useEffect(() => {
     getStories();
@@ -174,6 +197,9 @@ const App = () => {
         posts={ posts }
         addComment={ addComment }
         uploadComment= { uploadComment }
+        activeIndexStory={ activeIndexStory }
+        activeStory={ activeStory }
+        stopIntervalStories={ stopIntervalStories }
       />
     </div>
   );

@@ -3,7 +3,7 @@ import Carousel from "./Carousel";
 import Posts from "./Posts";
 
 
-const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainingStories, posts, addComment, isUploading, uploadComment }) => {
+const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainingStories, posts, addComment, isUploading, uploadComment, activeIndexStory, activeStory, stopIntervalStories }) => {
     return (
         <main>
             <div className="container">
@@ -15,6 +15,9 @@ const MainCustom = ({ stories, iteration, increaseIndex, decreaseIndex, remainin
                         increaseIndex={ increaseIndex } 
                         decreaseIndex={ decreaseIndex } 
                         remainingStories={ remainingStories }
+                        activeIndexStory={ activeIndexStory }
+                        activeStory={ activeStory }
+                        stopIntervalStories={ stopIntervalStories }
                     />
 
                     { !isUploading && (
